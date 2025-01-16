@@ -1,20 +1,18 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {Component} from '@angular/core';
+
+@Component({
+  selector: 'app-user',
+  template: `
+    Username: {{ username }}
+  `,
+})
+export class UserComponent {
+  username = 'youngTech';
+}
 
 @Component({
   selector: 'app-root',
-  // imports: [RouterOutlet],
-  // templateUrl: './app.component.html',
-  template: `
-  Hello {{ city }}, {{ 1 + 1 }}!`,
-  // styleUrl: './app.component.scss'
-  styles: `
-  :host {
-    color: #a144eb;
-  }
-  `
+  template: `<section> <app-user /> </section>`,
+  imports: [UserComponent],
 })
-export class AppComponent {
-  title = 'learn-angular';
-  city = 'San Francisco';
-}
+export class AppComponent {}
