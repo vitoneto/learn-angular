@@ -6,7 +6,7 @@ import { RouterOutlet } from '@angular/router';
   // imports: [RouterOutlet],
   // templateUrl: './app.component.html',
   template: `
-  Hello Universe`,
+  Hello {{ city }}, {{ 1 + 1 }}!`,
   // styleUrl: './app.component.scss'
   styles: `
   :host {
@@ -16,4 +16,5 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'learn-angular';
+  city = 'San Francisco';
 }
