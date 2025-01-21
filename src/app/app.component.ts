@@ -3,9 +3,17 @@ import {Component} from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <div [contentEditable]="isEditable"></div>
+    <section (mouseover)="onMouseOver()">
+      There's a secret message for you, hover to reveal:
+      {{ message }}
+  </section>
   `,
 })
 export class AppComponent {
-  isEditable: boolean = true;
+  message = '';
+
+  onMouseOver() {
+    this.message = 'way to go  🚀';
+    console.log(this.message);
+  }
 }
