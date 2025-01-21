@@ -1,18 +1,18 @@
 import {Component} from '@angular/core';
-import { UserComponent } from "./user/user.component";
+import { ChildComponent } from "./child/child.component";
 
 @Component({
   selector: 'app-root',
   template: `
-    <app-user name="Simran"></app-user>
+    <app-child (addItemEvent)="addItem($event)" />
+    <p>🐢 all the way down {{ items.length }}</p>
   `,
-  imports: [UserComponent],
+  imports: [ChildComponent],
 })
 export class AppComponent {
-  message = '';
+  items = new Array();
 
-  onMouseOver() {
-    this.message = 'way to go  🚀';
-    console.log(this.message);
+  addItem(item: string) {
+    this.items.push(item);
   }
 }
